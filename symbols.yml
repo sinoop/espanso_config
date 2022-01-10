@@ -1,0 +1,19 @@
+name: symbols
+parent: default
+matches:
+
+  # Right
+  - trigger: ";right"
+    replace: "→"
+
+  # Left
+  - trigger: ";left"
+    replace: "←"
+
+  # Up
+  - trigger: ";up"
+    replace: "↑"
+
+  # Down
+  - trigger: ";down"
+    replace: "↓"
