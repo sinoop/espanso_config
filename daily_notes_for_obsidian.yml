@@ -41,7 +41,7 @@ matches:
            cmd: "echo `date -v +Fri \"+[[diary/%Y-%m-%d_%A]]\"`"
 
    # Tomorrow
-   - trigger: ";tom"
+   - trigger: ";d_tom"
      word: true
      replace: "{{output}}"
      vars:

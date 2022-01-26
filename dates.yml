@@ -2,7 +2,7 @@ name: dates
 parent: default
 matches:
   # Today
-  - trigger: ";today"
+  - trigger: ";tdy"
     replace: "{{mydate}}"
     vars:
       - name: mydate
@@ -11,7 +11,7 @@ matches:
           format: "%A, %Y-%m-%d"
 
   # Tomorrow
-  - trigger: ";tomorrow"
+  - trigger: ";tom"
     word: true
     replace: "{{output}}"
     vars:
