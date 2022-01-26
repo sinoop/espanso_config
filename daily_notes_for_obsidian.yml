@@ -39,3 +39,13 @@ matches:
          type: shell
          params:
            cmd: "echo `date -v +Fri \"+[[diary/%Y-%m-%d_%A]]\"`"
+
+   # Tomorrow
+   - trigger: ";tom"
+     word: true
+     replace: "{{output}}"
+     vars:
+       - name: output
+         type: shell
+         params:
+           cmd: "echo `date -v +1d \"+[[diary/%Y-%m-%d_%A]]\"`"           
