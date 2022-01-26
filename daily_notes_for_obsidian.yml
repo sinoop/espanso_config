@@ -1,0 +1,41 @@
+name: daily_notes_for_obsidian
+parent: default
+matches:
+   # Breadcrumb
+   - trigger: ":bc"
+     word: true
+     replace: "{{output}}"
+     vars:
+       - name: output
+         type: shell
+         params:
+           cmd: "echo `date -v -1d \"+[[diary/%Y-%m-%d_%A|<< Yesterday]]\"`' | '`date -v +1d \"+[[diary/%Y-%m-%d_%A|Tomorrow >>]]\"`"
+   # Meeting
+   - trigger: ":meet"
+     word: true
+     replace: |
+              ## 0000 Meeting
+              - Tags:
+              Meeting Link:
+              Attendees:
+              Tasks:
+              Notes:
+  # Next Week
+   - triggers: [ ":>w", ":>mon" ]
+     word: true
+     replace: "{{output}}"
+     vars:
+       - name: output
+         type: shell
+         params:
+           cmd: "echo `date -v +Mon \"+[[diary/%Y-%m-%d_%A]]\"`"
+ 
+   # Next Friday
+   - trigger: ":>fri"
+     word: true
+     replace: "{{output}}"
+     vars:
+       - name: output
+         type: shell
+         params:
+           cmd: "echo `date -v +Fri \"+[[diary/%Y-%m-%d_%A]]\"`"
