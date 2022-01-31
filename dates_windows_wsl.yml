@@ -1,0 +1,21 @@
+name: dates
+parent: default
+matches:
+  # Today
+  - trigger: ";tdy"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%A, %Y-%m-%d"
+
+  # Tomorrow
+  - trigger: ";tom"
+    word: true
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: wsl
+        params:
+          cmd: "echo `date -v +1d \"+%Y-%m-%d_%A\"`"
